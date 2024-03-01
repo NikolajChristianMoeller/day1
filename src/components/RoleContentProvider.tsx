@@ -19,3 +19,4 @@ export default function RoleContextProvider({ children }: { children: React.Reac
 export function useRole() {
     return useContext(RoleContext);
 }
+

@@ -29,7 +29,9 @@ export default function LiftingState({ title }: BaseProps) {
         */
        // Det her synes kunne jeg også drillede mig
     };
+
     <h2>{title}</h2>;
+
     return (
         <>
             <div className="outer">
@@ -56,3 +58,5 @@ export default function LiftingState({ title }: BaseProps) {
         </>
     );
 }
+
+

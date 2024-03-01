@@ -6,18 +6,10 @@ export default function UserTable({ users }) {
         <table className="simple-table">
             <thead>
                 <tr>
-                    <td>
-                        ID
-                    </td>
-                    <td>
-                        Name
-                    </td>
-                    <td>
-                        Email
-                    </td>
-                    <td>
-                        Active
-                    </td>
+                    <td>ID</td>
+                    <td>Name</td>
+                    <td>Email</td>
+                    <td>Active</td>
                 </tr>
             </thead>
             <tbody>

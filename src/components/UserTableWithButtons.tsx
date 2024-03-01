@@ -9,11 +9,6 @@ export default function UserTableWithButtons({ users,}: UserTableProps) {
     const [usersLocal, setUsersLocal] = useState<User[]>(users);
 
 
-    // 1) Implement an eventhandler that will handle the edit button click and call the editUser callback
-    // const handleEditUser = (userId: number) => {};
-    // 2) When done, attach the event handler to the edit button
-
-
     useEffect(() => {
         setUsersLocal(users);
     }, [users]);
@@ -24,11 +19,7 @@ export default function UserTableWithButtons({ users,}: UserTableProps) {
             <table className="simple-table">
                 <thead>
                     <tr>
-                        <th>Id</th>
-                        <th>Name</th>
-                        <th>Email</th>
-                        <th>Active</th>
-                        <th>#</th>
+                        <th>Id</th><th>Name</th><th>Email</th><th>Active</th><th>#</th>
                     </tr>
                 </thead>
                 <tbody>

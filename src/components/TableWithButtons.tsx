@@ -22,11 +22,7 @@ export default function UserTableWithButtons({ users, editUser }: UserTableProps
             <table className="simple-table">
                 <thead>
                     <tr>
-                        <th>Id</th>
-                        <th>Name</th>
-                        <th>Email</th>
-                        <th>Active</th>
-                        <th>#</th>
+                        <th>Id</th><th>Name</th><th>Email</th><th>Active</th><th>#</th>
                     </tr>
                 </thead>
                 <tbody>

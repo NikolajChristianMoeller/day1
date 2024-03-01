@@ -1,12 +1,10 @@
-type ImageButtonProps = {
-    image: string;
-    onClick: () => void;
-};
+import { ImageButtonProp } from "../types";
 
-export default function ImageButton(props: ImageButtonProps) {
+export default function ImageButton({ image, onClick }: ImageButtonProp) {
+
     return (
-        <button onClick={props.onClick} style={{ flex: "0 0 auto" }}>
-            <img src={props.image} alt="Button" style={{ width: "100px", height: "100px" }} />
+        <button className="imageButton" onClick={onClick}>
+            <img src={image} width={100} />
         </button>
-    );
+    )
 }

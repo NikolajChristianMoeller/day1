@@ -1,28 +1,22 @@
-import { BaseProps } from "../types";
 import { FormEvent, useRef } from "react";
-import { User } from "../data/data";
 
-
-type UserFormProps = BaseProps & {
-    onSubmitUser: (user: User) => void;
-};
-
+type UserFormProps = {
+    title: string,
+    onSubmitUser: (newUser) => void
+}
 
 export default function UserForm({ title, onSubmitUser }: UserFormProps) {
-    const inputRefName = useRef<HTMLInputElement>(null);
-    const inputRefEmail = useRef<HTMLInputElement>(null);
-    const inputRefActive = useRef<HTMLInputElement>(null);
-
+    const nameRef = useRef(null);
+    const mailRef = useRef(null);
+    const activeRef = useRef(null);
 
     const onSubmit = (e: FormEvent<HTMLFormElement>) => {
         e.preventDefault();
-        const newUser: User = {
-            name: inputRefName.current?.value || "",
-            email: inputRefEmail.current?.value || "",
-            isActive: inputRefActive.current?.checked || false,
+        const newUser = {
+            name: nameRef.current.value,
+            email: mailRef.current.value,
+            isActive: activeRef.current.checked
         }
-        
-        //Read form inputs and submit the form to the parent
         onSubmitUser(newUser);
     };
 
@@ -31,9 +25,9 @@ export default function UserForm({ title, onSubmitUser }: UserFormProps) {
         <>
             <h2>{title}</h2>
             <form onSubmit={onSubmit}>
-                First Name: <input name="name" ref={inputRefName} />
-                Email: <input name="email" ref={inputRefEmail} />
-                Active: <input type="checkbox" name="isActive" ref={inputRefActive} />
+                First Name: <input name="name" ref={nameRef} />
+                Email: <input name="email" ref={mailRef} />
+                Active: <input type="checkbox" name="isActive" ref={activeRef} />
                 <button type="submit">Add User</button>
             </form>
         </>

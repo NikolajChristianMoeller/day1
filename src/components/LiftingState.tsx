@@ -35,7 +35,7 @@ export default function LiftingState({ title }: BaseProps) {
             <div className="outer">
                 <h2 style={{ margin: 0 }}>Root Component</h2>
                 <p style={{ margin: 0 }}>
-                    This is where ALL the users live (Single Source of truth).{" "}
+                    This is where ALL the users live (SSOT).{" "}
                     <em>User Count:</em> <b>{users.length}</b>
                 </p>
                 <p><em>User To Edit:</em> <b>{JSON.stringify(userToEdit)}</b></p>

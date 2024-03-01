@@ -1,21 +1,17 @@
-type ProfileProps = {
-    name:string;
-    email:string;
-    isActive : boolean;
-    singleLine? : boolean;
-}
+import { ProfileProps } from "../types"
 
-export default function Profile({name,email,isActive,singleLine}:ProfileProps){
+export default function Profile({ name, email, isActive, singleLine }: ProfileProps) {
 
-    {if (singleLine) return (
-        <p>{name},{email},{isActive ? "Aktiv" : "Ikke aktiv"}</p>
-    )}
-
-return (
-    <>
-    <p>{name}</p>
-    <p>{email}</p>
-    <p>{isActive ? "Aktiv" : "Ikke aktiv"}</p>
-    </>
-    )
+    if (singleLine) {
+        return <p>{name}, {email}, {isActive ? "Active" : "Inactive"}</p>
+    } else {
+        return (
+            <>
+                <h2>Profile</h2>
+                <p>Name: {name}</p>
+                <p>Email: {email}</p>
+                <p>Active: {isActive ? "Active" : "Inactive"}</p>
+            </>
+        )
+    }
 }

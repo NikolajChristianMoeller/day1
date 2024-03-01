@@ -9,7 +9,7 @@ import EventDemo1 from "./exercises/EventDemo";
 import StateDemo3 from "./exercises/StateDemo3";
 import UseEffectDemo from "./exercises/UseEffect";
 import ContextDemoApp from "./exercises/ContextDemo";
-import LiftingState from "./components/LiftingState";
+import LiftingState from "./exercises/LiftingState";
 
 export default function App() {
   const [selectedView, setSelectedView] = useState("info");

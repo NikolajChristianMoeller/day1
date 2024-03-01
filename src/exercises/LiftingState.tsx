@@ -2,8 +2,8 @@ import { BaseProps } from "../types";
 import { User, users as usersDB } from "../data/data";
 import { useState } from "react";
 import UserTableWithButtons from "../components/UserTableWithButtons";
-import "./liftingState.css"
-import UserFormControlled, {AddEditDeleteFunction,} from "../components/UserFormControlled";
+import "./LiftingState.css"
+import UserFormControlled, { AddEditDeleteFunction, } from "../components/UserFormControlled";
 
 
 export default function LiftingState({ title }: BaseProps) {
@@ -27,7 +27,7 @@ export default function LiftingState({ title }: BaseProps) {
          Find the user (in users) given the id and set userToEdit to this user
          Remember users is just an array of users, so you have to find the user in the array
         */
-       // Det her synes kunne jeg også drillede mig
+        // Det her synes kunne jeg også drillede mig
     };
 
     <h2>{title}</h2>;

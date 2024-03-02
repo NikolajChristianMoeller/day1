@@ -1,21 +1,22 @@
 import { FormEvent, useRef } from "react";
+import { User } from "../data/data";
 
 type UserFormProps = {
     title: string,
-    onSubmitUser: (newUser) => void
+    onSubmitUser: (user : User) => void
 }
 
 export default function UserForm({ title, onSubmitUser }: UserFormProps) {
-    const nameRef = useRef(null);
-    const mailRef = useRef(null);
-    const activeRef = useRef(null);
+    const nameRef = useRef<HTMLInputElement>(null);
+    const mailRef = useRef<HTMLInputElement>(null);
+    const activeRef = useRef<HTMLInputElement>(null);
 
     const onSubmit = (e: FormEvent<HTMLFormElement>) => {
         e.preventDefault();
         const newUser = {
-            name: nameRef.current.value,
-            email: mailRef.current.value,
-            isActive: activeRef.current.checked
+            name: nameRef.current?.value ?? "",
+            email: mailRef.current?.value ?? "",
+            isActive: activeRef.current?.checked ?? false,
         }
         onSubmitUser(newUser);
     };

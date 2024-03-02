@@ -1,9 +1,8 @@
+import { User } from "../data/data";
 
-
-export default function UserTable({ users }) {
-
+export default function UserTable({ users }: { users: User[] }) {
     return (
-        <table className="simple-table">
+        <table>
             <thead>
                 <tr>
                     <td>ID</td>
@@ -13,18 +12,15 @@ export default function UserTable({ users }) {
                 </tr>
             </thead>
             <tbody>
-                {users.map(user => (
+                {users.map((user) => (
                     <tr key={user.id}>
                         <td>{user.id}</td>
                         <td>{user.name}</td>
                         <td>{user.email}</td>
-                        <td>{user.isActive ? "Active" : "Inactive"}</td>
+                        <td>{user.isActive ? "A" : "NA"}</td>
                     </tr>
-                ))
-                }
+                ))}
             </tbody>
-
         </table>
     );
-
 }

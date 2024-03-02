@@ -3,19 +3,18 @@ import { BaseProps } from "../types";
 import { User } from "../data/data";
 
 export default function StateDemo2({ title }: BaseProps) {
-    const defaultUser = {
+    const defaultUser: User = {
         id: 1,
         name: "Max Power",
         email: "max.power@email.com",
         isActive: true,
-    }
+    };
 
     const [user, setUser] = useState<User>(defaultUser);
 
     function handleNameChange(e: ChangeEvent<HTMLInputElement>) {
-        user.name = e.target.value;
-        const u = Object.assign(defaultUser);
-        setUser(prev=>({...prev, name: e.target.value}))
+        // Clones the user object and updates the name property
+        setUser((prev) => ({ ...prev, name: e.target.value }));
     }
 
     return (
@@ -24,7 +23,8 @@ export default function StateDemo2({ title }: BaseProps) {
             <div>
                 <p>ID: {user.id}</p>{" "}
             </div>
-            First Name: <input name="name" value={user.name} onChange={handleNameChange} />
+            First Name:{" "}
+            <input name="name" value={user.name} onChange={handleNameChange} />
             Email: <input name="email" value={user.email} onChange={handleNameChange} />
             Active: <input type="checkbox" checked={user.isActive} name="isActive" />
             <p style={{ marginTop: 15 }}> {JSON.stringify(user)} </p>

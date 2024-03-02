@@ -1,5 +1,5 @@
 import { BaseProps } from "../types";
-import { User, users as usersDB, getNextId } from "../data/data";
+import { User, users as usersDB } from "../data/data";
 import { useState } from "react";
 import UserTableWithButtons from "../components/TableWithButtons";
 import "./liftingState.css"
@@ -18,7 +18,7 @@ export default function LiftingState({ title }: BaseProps) {
             users.splice(users.indexOf(user), 1);
             setUsers([...users])
         } else if (user.id) {
-            users.splice(users.indexOf(userToEdit), 1);
+            users.splice(users.indexOf(user), 1);
             setUsers([...users, user]);
         } else {
             setUsers([...users, user]);
